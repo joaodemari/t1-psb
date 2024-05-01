@@ -40,11 +40,11 @@ int main(void)
                 int numberOfSquaresGreen = numberOfSquaresToBePainted(Green, k);
                 int numberOfSquaresBlue = numberOfSquaresToBePainted(Blue, k);
 
-                int LineInNewImage = (i * 3 + k) * newWidth;
+                int PositionInNewImage = (i * 3 + k) * newWidth + (j * 3);
 
-                int positionInNewImageRed = LineInNewImage + (j * 3);
-                int positionInNewImageGreen = LineInNewImage + (j * 3 + 1);
-                int positionInNewImageBlue = LineInNewImage + (j * 3 + 2);
+                int positionInNewImageRed = PositionInNewImage;
+                int positionInNewImageGreen = PositionInNewImage + 1;
+                int positionInNewImageBlue = PositionInNewImage + 2;
 
                 newImage->pix[positionInNewImageRed].r = HasToBePainted(numberOfSquaresRed, k) * 255;
                 newImage->pix[positionInNewImageGreen].g = HasToBePainted(numberOfSquaresGreen, k) * 255;
